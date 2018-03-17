@@ -30,14 +30,14 @@ public class cuadrado {
         this.altura = altura;
     }
 
-    public double area(){
-        return base*altura;
+    public double area() {
+        return base * altura;
     }
-    
-    public double diagonal(){
+
+    public double diagonal() {
         double numero;
-        numero = Math.pow(base, 2)+Math.pow(altura, 2);
+        numero = Math.pow(base, 2) + Math.pow(altura, 2);
         return Math.pow(numero, 0.5);
     }
-    
+
 }
