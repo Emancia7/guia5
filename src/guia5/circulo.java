@@ -30,12 +30,12 @@ public class circulo {
         this.diametro = diamertro;
     }
 
-    public double areaRadio() {
-        return (Math.PI) * (Math.pow(radio, 2));
+    public double circunferenciaRadio() {
+        return (Math.PI) * (radio * 2);
     }
 
-    public double areaDiametro() {
-        return (Math.PI) * (Math.pow(diametro / 2, 2));
+    public double circunferenciaDiametro() {
+        return (Math.PI) * diametro;
     }
 
 }
