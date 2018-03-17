@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guia5;
+package clases.guia1;
 
 /**
  *
  * @author Emancia7
  */
-public class circulo {
+public class esfera {
 
     public double radio;
     public double diametro;
@@ -22,20 +22,19 @@ public class circulo {
         this.radio = radio;
     }
 
-    public double getDiamertro() {
+    public double getDiametro() {
         return diametro;
     }
 
-    public void setDiamertro(double diamertro) {
-        this.diametro = diamertro;
+    public void setDiametro(double diametro) {
+        this.diametro = diametro;
     }
 
-    public double circunferenciaRadio() {
-        return (Math.PI) * (radio * 2);
+    public double volumenRadio() {
+        return (4/3)*(Math.PI)*(Math.pow(radio, 3));
     }
 
-    public double circunferenciaDiametro() {
-        return (Math.PI) * diametro;
+    public double volumenDiametro() {
+        return (4/3)*(Math.PI)*(Math.pow(diametro/2, 3));
     }
-
 }
