@@ -10,7 +10,7 @@ package clases.guia4;
  * @author Emancia7
  */
 public class puntos {
-    
+
     public double tamanioPantalla;
     public int capacidadBateria;
     public String marca;
@@ -19,61 +19,61 @@ public class puntos {
     public int pixelesPrincipal;
     public int garantia;
     public int nucleos;
-    public int ram;
-    
+    public double ram;
+
     public double getTamanioPantalla() {
         return tamanioPantalla;
     }
-    
+
     public void setTamanioPantalla(double tamanioPantalla) {
         this.tamanioPantalla = tamanioPantalla;
     }
-    
+
     public int getCapacidadBateria() {
         return capacidadBateria;
     }
-    
+
     public void setCapacidadBateria(int capacidadBateria) {
         this.capacidadBateria = capacidadBateria;
     }
-    
+
     public String getMarca() {
         return marca;
     }
-    
+
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
+
     public double getPrecio() {
         return precio;
     }
-    
+
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    
+
     public int getGarantia() {
         return garantia;
     }
-    
+
     public void setGarantia(int garantia) {
         this.garantia = garantia;
     }
-    
+
     public int getNucleos() {
         return nucleos;
     }
-    
+
     public void setNucleos(int nucleos) {
         this.nucleos = nucleos;
     }
-    
-    public int getRam() {
+
+    public double getRam() {
         return ram;
     }
-    
-    public void setRam(int ram) {
+
+    public void setRam(double ram) {
         this.ram = ram;
     }
 
@@ -92,8 +92,6 @@ public class puntos {
     public void setPixelesPrincipal(int pixelesPrincipal) {
         this.pixelesPrincipal = pixelesPrincipal;
     }
-    
-    
 
     //metodos
     public int bateriaPatalla() {
@@ -141,7 +139,7 @@ public class puntos {
         }
         return 10;
     }
-    
+
     public int refDeMarca() {
         if (marca.equals("NEXUS") || marca.equals("GOOGLE") || marca.equals("LENOVO") || marca.equals("HUAWEI") || marca.equals("SONY") || marca.equals("APPLE")) {
             return 4;
@@ -153,7 +151,7 @@ public class puntos {
             }
         }
     }
-    
+
     public int rangoPrecio() {
         if (precio < 100 && precio > 1) {
             return 2;
@@ -166,7 +164,7 @@ public class puntos {
         }
         return -10;
     }
-    
+
     public int pixelaje() {
         if (pixelesPrincipal <= 5) {
             if (pixelesFrontal < 2) {
@@ -194,9 +192,54 @@ public class puntos {
             if (pixelesFrontal > 2 && pixelesFrontal < 5) {
                 return 2;
             }
-            if (pixelesFrontal>5) {
+            if (pixelesFrontal > 5) {
                 return 3;
             }
+        }
+        return -10;
+    }
+
+    public int garantia() {
+        if (garantia <= 3) {
+            return 1;
+        }
+        if (garantia > 3 && garantia < 6) {
+            return 2;
+        }
+        if (garantia > 6) {
+            return 4;
+        }
+        return -10;
+    }
+
+    public int cpu() {
+        if (nucleos == 2) {
+            return 0;
+        }
+        if (nucleos == 4) {
+            return 1;
+        }
+        if (nucleos == 6) {
+            return 2;
+        }
+        if (nucleos == 8) {
+            return 3;
+        }
+        return -10;
+    }
+
+    public int ram() {
+        if (ram <= 1) {
+            return 0;
+        }
+        if (ram > 1 && ram < 2) {
+            return 2;
+        }
+        if (ram > 2 && ram < 4) {
+            return 4;
+        }
+        if (ram > 5) {
+            return 6;
         }
         return -10;
     }
