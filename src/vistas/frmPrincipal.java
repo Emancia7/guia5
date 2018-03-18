@@ -36,8 +36,18 @@ public class frmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnGuia1.setText("App guia 1");
+        btnGuia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuia1ActionPerformed(evt);
+            }
+        });
 
         btnGuia2.setText("App guia 2");
+        btnGuia2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuia2ActionPerformed(evt);
+            }
+        });
 
         btnGuia3.setText("App guia 3 y 4");
         btnGuia3.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +57,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,6 +97,20 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmGuia3 guia3 = new frmGuia3();
         guia3.setVisible(true);
     }//GEN-LAST:event_btnGuia3ActionPerformed
+
+    private void btnGuia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuia1ActionPerformed
+        frmGuia1 guia1 = new frmGuia1();
+        guia1.setVisible(true);
+    }//GEN-LAST:event_btnGuia1ActionPerformed
+
+    private void btnGuia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuia2ActionPerformed
+        frmGuia2 guia2 = new frmGuia2();
+        guia2.setVisible(true);
+    }//GEN-LAST:event_btnGuia2ActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments

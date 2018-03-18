@@ -22,11 +22,11 @@ public class circulo {
         this.radio = radio;
     }
 
-    public double getDiamertro() {
+    public double getDiametro() {
         return diametro;
     }
 
-    public void setDiamertro(double diamertro) {
+    public void setDiametro(double diamertro) {
         this.diametro = diamertro;
     }
 
