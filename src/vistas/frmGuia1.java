@@ -24,6 +24,7 @@ public class frmGuia1 extends javax.swing.JFrame {
     
     public frmGuia1() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
