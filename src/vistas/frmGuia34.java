@@ -6,6 +6,7 @@
 package vistas;
 
 import clases.guia4.puntos;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -446,6 +447,21 @@ public class frmGuia34 extends javax.swing.JFrame {
         mensaje = mensaje +"Su precio es de: "+txtPrecio.getText()+"\t";
         
         txtAreaDetalle.setText(mensaje);
+        if (chkFlash.isSelected()) {
+            puntosFinal=puntosFinal-1;
+        }
+        if (puntosFinal<=7) {
+            JOptionPane.showMessageDialog(null, "No es una buena inversion");
+        }
+        if (puntosFinal>7 && puntosFinal<=14) {
+            JOptionPane.showMessageDialog(null, "Es una inversion de riesgo");
+        }
+        if (puntosFinal>14 && puntosFinal<=21) {
+            JOptionPane.showMessageDialog(null, "Es una inversion viable");
+        }
+        if (puntosFinal>21) {
+            JOptionPane.showMessageDialog(null, "Es una buena inversion");
+        }
         puntosFinal=0;
         mensaje="";
     }//GEN-LAST:event_btnEjecutarActionPerformed
