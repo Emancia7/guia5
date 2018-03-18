@@ -5,6 +5,8 @@
  */
 package guia5;
 
+import vistas.frmGuia3;
+
 /**
  *
  * @author Emancia7
@@ -15,7 +17,8 @@ public class Guia5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        frmGuia3 formulario = new frmGuia3();
+        formulario.setVisible(true);
     }
     
 }

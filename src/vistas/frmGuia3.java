@@ -5,6 +5,8 @@
  */
 package vistas;
 
+import clases.guia4.puntos;
+
 /**
  *
  * @author Emancia7
@@ -14,8 +16,15 @@ public class frmGuia3 extends javax.swing.JFrame {
     /**
      * Creates new form frmGuia3
      */
+    public puntos puntuacion = new puntos();
+    int puntosFinal = 0;
+    String mensaje = "";
+
     public frmGuia3() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        txtPrincipal.setEditable(false);
+        txtSecundaria.setEditable(false);
     }
 
     /**
@@ -53,11 +62,56 @@ public class frmGuia3 extends javax.swing.JFrame {
 
         jLabel1.setText("Cpu numero de nucleos");
 
+        txtNucleos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNucleosKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNucleosKeyReleased(evt);
+            }
+        });
+
         jLabel2.setText("Tamaño de pantalla");
+
+        txtPantalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPantallaKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPantallaKeyReleased(evt);
+            }
+        });
 
         jLabel3.setText("Cantidad de RAM");
 
+        txtRam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRamKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtRamKeyReleased(evt);
+            }
+        });
+
         jLabel4.setText("Tiempo de garantia");
+
+        txtGarantia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGarantiaKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtGarantiaKeyReleased(evt);
+            }
+        });
+
+        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyReleased(evt);
+            }
+        });
 
         jLabel5.setText("Precio");
 
@@ -68,8 +122,18 @@ public class frmGuia3 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Camaras"));
 
         chkPrincipal.setText("Principal");
+        chkPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPrincipalActionPerformed(evt);
+            }
+        });
 
         chkSecundaria.setText("Secundaria");
+        chkSecundaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSecundariaActionPerformed(evt);
+            }
+        });
 
         chkFlash.setText("Flash");
 
@@ -106,6 +170,11 @@ public class frmGuia3 extends javax.swing.JFrame {
         );
 
         btnEjecutar.setText("Ejecutar");
+        btnEjecutar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEjecutarActionPerformed(evt);
+            }
+        });
 
         txtAreaDetalle.setColumns(20);
         txtAreaDetalle.setRows(5);
@@ -199,6 +268,187 @@ public class frmGuia3 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNucleosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNucleosKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume­();
+        }
+        String entrada;
+        entrada = txtNucleos.getText();
+        if (entrada.length() >= 2) {
+            txtNucleos.setText("");
+        }
+    }//GEN-LAST:event_txtNucleosKeyTyped
+
+    private void txtPantallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPantallaKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            if ((c != '.')) {
+                evt.consume­();
+            }
+        }
+        String entrada;
+        entrada = txtPantalla.getText();
+        if (entrada.length() >= 3) {
+            txtPantalla.setText("");
+        }
+    }//GEN-LAST:event_txtPantallaKeyTyped
+
+    private void txtNucleosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNucleosKeyReleased
+        int num;
+        if (!txtNucleos.getText().equals("")) {
+            num = Integer.parseInt(txtNucleos.getText());
+            if (num < 1 || num > 12) {
+                txtNucleos.setText("");
+            }
+        }
+    }//GEN-LAST:event_txtNucleosKeyReleased
+
+    private void txtPantallaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPantallaKeyReleased
+        double num;
+        if (txtPantalla.getText().length() == 2 && !("" + txtPantalla.getText().charAt(1)).equals(".")) {
+            txtPantalla.setText("");
+        } else {
+            if (!txtPantalla.getText().equals("") && txtPantalla.getText().length() != 2) {
+                if (txtPantalla.getText().length() == 1 && ("" + txtPantalla.getText().charAt(0)).equals(".") || txtPantalla.getText().length() == 3 && ("" + txtPantalla.getText().charAt(2)).equals(".")) {
+                    txtPantalla.setText("");
+                } else {
+                    num = Double.parseDouble(txtPantalla.getText());
+                    if (num < 3.0 || num > 6.7) {
+                        txtPantalla.setText("");
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_txtPantallaKeyReleased
+
+    private void txtRamKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRamKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            if ((c != '.')) {
+                evt.consume­();
+            }
+        }
+        String entrada;
+        entrada = txtRam.getText();
+        if (entrada.length() >= 3) {
+            txtRam.setText("");
+        }
+    }//GEN-LAST:event_txtRamKeyTyped
+
+    private void txtRamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRamKeyReleased
+        double num;
+        if (txtRam.getText().length() == 2 && !("" + txtRam.getText().charAt(1)).equals(".")) {
+            txtRam.setText("");
+        } else {
+            if (!txtRam.getText().equals("") && txtRam.getText().length() != 2) {
+                if ((txtRam.getText().length() == 1 && ("" + txtRam.getText().charAt(0)).equals(".")) || (txtRam.getText().length() == 3 && ("" + txtRam.getText().charAt(2)).equals("."))) {
+                    txtRam.setText("");
+                } else {
+                    num = Double.parseDouble(txtRam.getText());
+                    if (num == 0) {
+                        txtRam.setText("0");
+                    } else {
+                        if (num < 0.5 || num > 6.0) {
+                            txtRam.setText("");
+                        }
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_txtRamKeyReleased
+
+    private void txtGarantiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGarantiaKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume­();
+        }
+        String entrada;
+        entrada = txtGarantia.getText();
+        if (entrada.length() >= 2) {
+            txtGarantia.setText("");
+        }
+    }//GEN-LAST:event_txtGarantiaKeyTyped
+
+    private void txtGarantiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGarantiaKeyReleased
+        int num;
+        if (!txtGarantia.getText().equals("")) {
+            num = Integer.parseInt(txtGarantia.getText());
+            if (num < 1 || num > 24) {
+                txtGarantia.setText("");
+            }
+        }
+    }//GEN-LAST:event_txtGarantiaKeyReleased
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            if ((c != '.')) {
+                evt.consume­();
+            }
+        }
+        String entrada;
+        entrada = txtPrecio.getText();
+        if (entrada.length() >= 6) {
+            txtPrecio.setText("");
+        }
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void txtPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyReleased
+        //        double num;
+//        if (txtPrecio.getText().length() == 4 && !("" + txtPrecio.getText().charAt(3)).equals(".")) {
+//            txtPrecio.setText("");
+//        } else {
+//            if (!txtPrecio.getText().equals("") && txtPrecio.getText().length() != 2) {
+//                if ((txtPrecio.getText().length() == 1 && ("" + txtPrecio.getText().charAt(0)).equals(".")) || (txtPrecio.getText().length() == 3 && ("" + txtPrecio.getText().charAt(2)).equals("."))) {
+//                    txtPrecio.setText("");
+//                } else {
+//                    num = Double.parseDouble(txtPrecio.getText());
+//                    if (num == 0) {
+//                        txtPrecio.setText("0");
+//                    } else {
+//                        if (num < 0.01 || num > 999.999) {
+//                            txtPrecio.setText("");
+//                        }
+//                    }
+//                }
+//            }
+//        }
+    }//GEN-LAST:event_txtPrecioKeyReleased
+
+    private void chkPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPrincipalActionPerformed
+        txtPrincipal.setEditable(chkPrincipal.isSelected());
+    }//GEN-LAST:event_chkPrincipalActionPerformed
+
+    private void chkSecundariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSecundariaActionPerformed
+        txtSecundaria.setEditable(chkSecundaria.isSelected());
+    }//GEN-LAST:event_chkSecundariaActionPerformed
+
+    private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjecutarActionPerformed
+        puntuacion.setNucleos(Integer.parseInt(txtNucleos.getText()));
+        puntuacion.setTamanioPantalla(Double.parseDouble(txtPantalla.getText()));
+        puntuacion.setRam(Double.parseDouble(txtRam.getText()));
+        puntuacion.setGarantia(Integer.parseInt(txtGarantia.getText()));
+        puntuacion.setPrecio(Double.parseDouble(txtPrecio.getText()));
+        puntuacion.setMarca(""+cbxMarca.getSelectedItem());
+        if (chkPrincipal.isSelected()) {
+            puntuacion.setPixelesFrontal(Double.parseDouble(txtPrincipal.getText()));
+        }
+        if (chkSecundaria.isSelected()) {
+            puntuacion.setPixelesFrontal(Double.parseDouble(txtSecundaria.getText()));
+        }
+        puntosFinal = puntuacion.mostrar();
+        mensaje = mensaje +"El numero de cpu es: "+txtNucleos.getText()+"\t";
+        mensaje = mensaje +"El tamaño de pantalla es: "+txtPantalla.getText()+"\n";
+        mensaje = mensaje +"La memoria ram es de: "+txtRam.getText()+"\t";
+        mensaje = mensaje +"La garantia es de: "+txtGarantia.getText()+"\n";
+        mensaje = mensaje +"Su precio es de: "+txtPrecio.getText()+"\t";
+        
+        txtAreaDetalle.setText(mensaje);
+        puntosFinal=0;
+        mensaje="";
+    }//GEN-LAST:event_btnEjecutarActionPerformed
 
     /**
      * @param args the command line arguments

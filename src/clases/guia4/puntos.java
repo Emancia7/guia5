@@ -15,8 +15,8 @@ public class puntos {
     public int capacidadBateria;
     public String marca;
     public double precio;
-    public int pixelesFrontal;
-    public int pixelesPrincipal;
+    public double pixelesFrontal;
+    public double pixelesPrincipal;
     public int garantia;
     public int nucleos;
     public double ram;
@@ -77,19 +77,19 @@ public class puntos {
         this.ram = ram;
     }
 
-    public int getPixelesFrontal() {
+    public double getPixelesFrontal() {
         return pixelesFrontal;
     }
 
-    public void setPixelesFrontal(int pixelesFrontal) {
+    public void setPixelesFrontal(double pixelesFrontal) {
         this.pixelesFrontal = pixelesFrontal;
     }
 
-    public int getPixelesPrincipal() {
+    public double getPixelesPrincipal() {
         return pixelesPrincipal;
     }
 
-    public void setPixelesPrincipal(int pixelesPrincipal) {
+    public void setPixelesPrincipal(double pixelesPrincipal) {
         this.pixelesPrincipal = pixelesPrincipal;
     }
 
