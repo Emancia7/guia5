@@ -5,6 +5,7 @@
  */
 package guia5;
 
+import vistas.frmLogin;
 import vistas.frmGuia3;
 
 /**
@@ -17,7 +18,7 @@ public class Guia5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        frmGuia3 formulario = new frmGuia3();
+        frmLogin formulario = new frmLogin();
         formulario.setVisible(true);
     }
     
