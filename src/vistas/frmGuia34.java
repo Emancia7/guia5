@@ -11,7 +11,7 @@ import clases.guia4.puntos;
  *
  * @author Emancia7
  */
-public class frmGuia3 extends javax.swing.JFrame {
+public class frmGuia34 extends javax.swing.JFrame {
 
     /**
      * Creates new form frmGuia3
@@ -20,7 +20,7 @@ public class frmGuia3 extends javax.swing.JFrame {
     int puntosFinal = 0;
     String mensaje = "";
 
-    public frmGuia3() {
+    public frmGuia34() {
         initComponents();
         this.setLocationRelativeTo(null);
         txtPrincipal.setEditable(false);
@@ -467,20 +467,21 @@ public class frmGuia3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmGuia3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuia34.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmGuia3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuia34.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmGuia3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuia34.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmGuia3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuia34.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmGuia3().setVisible(true);
+                new frmGuia34().setVisible(true);
             }
         });
     }

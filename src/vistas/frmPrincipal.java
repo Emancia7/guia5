@@ -94,7 +94,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuia3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuia3ActionPerformed
-        frmGuia3 guia3 = new frmGuia3();
+        frmGuia34 guia3 = new frmGuia34();
         guia3.setVisible(true);
     }//GEN-LAST:event_btnGuia3ActionPerformed
 

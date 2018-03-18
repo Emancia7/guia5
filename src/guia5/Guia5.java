@@ -6,7 +6,7 @@
 package guia5;
 
 import vistas.frmLogin;
-import vistas.frmGuia3;
+import vistas.frmGuia34;
 
 /**
  *
