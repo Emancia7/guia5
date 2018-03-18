@@ -137,7 +137,7 @@ public class puntos {
                 return 3;
             }
         }
-        return 10;
+        return 0;
     }
 
     public int refDeMarca() {
@@ -162,7 +162,7 @@ public class puntos {
         if (precio > 350) {
             return 4;
         }
-        return -10;
+        return 0;
     }
 
     public int pixelaje() {
@@ -196,7 +196,7 @@ public class puntos {
                 return 3;
             }
         }
-        return -10;
+        return 0;
     }
 
     public int garantia() {
@@ -225,7 +225,7 @@ public class puntos {
         if (nucleos == 8) {
             return 3;
         }
-        return -10;
+        return 0;
     }
 
     public int ram() {
@@ -241,6 +241,10 @@ public class puntos {
         if (ram > 5) {
             return 6;
         }
-        return -10;
+        return 0;
+    }
+    
+    public int mostrar(){
+        return bateriaPatalla()+refDeMarca()+rangoPrecio()+pixelaje()+garantia()+cpu()+ram();
     }
 }
